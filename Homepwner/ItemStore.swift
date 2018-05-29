@@ -23,12 +23,11 @@ class ItemStore {
         return newItem
     }
     
-    func getItemsWorthMoreOrEqualThan(valueInDollars: Int) -> [Item] {
-        return allItems.filter { $0.valueInDollars >= valueInDollars}.sorted {$0.valueInDollars > $1.valueInDollars}
-    }
     
-    func getItemsWorthLessThan(valueInDollars: Int) -> [Item] {
-        return allItems.filter { $0.valueInDollars < valueInDollars}.sorted {$0.valueInDollars > $1.valueInDollars}
+    func filterItemsBy(_ price: Int = 50) -> [[Item]] {
+        let moreOrEqualThanPrice = allItems.filter { $0.valueInDollars >= price }
+        let lessThanPrice = allItems.filter { $0.valueInDollars < price }
+        return [moreOrEqualThanPrice, lessThanPrice]
     }
     
 }

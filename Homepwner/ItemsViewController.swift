@@ -22,37 +22,19 @@ class ItemsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return itemStore.getItemsWorthMoreOrEqualThan(valueInDollars: 50).count
-        case 1:
-            return itemStore.getItemsWorthLessThan(valueInDollars: 50).count
-        default:
-            return 0
-        }
+        return itemStore.filterItemsBy()[section].count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return itemStore.filterItemsBy().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-
-        switch indexPath.section {
-        case 0:
-            let item = itemStore.getItemsWorthMoreOrEqualThan(valueInDollars: 50)[indexPath.row]
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-            return cell
-        case 1:
-            let item = itemStore.getItemsWorthLessThan(valueInDollars: 50)[indexPath.row]
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-            return cell
-        default:
-            return cell
-        }
+        let item = itemStore.filterItemsBy()[indexPath.section][indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -62,7 +44,7 @@ class ItemsViewController: UITableViewController {
         case 1:
             return "< $50"
         default:
-            return ""
+            return nil
         }
     }
     
