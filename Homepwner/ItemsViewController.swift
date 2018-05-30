@@ -12,6 +12,17 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
+    }
+    
+    // MARK: - UITableViewDateSource methods
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
@@ -22,6 +33,22 @@ class ItemsViewController: UITableViewController {
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         return cell
+    }
+    
+    //MARK: - Editing mode implementation
+    
+    @IBAction func addNewItem(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
     }
     
 }

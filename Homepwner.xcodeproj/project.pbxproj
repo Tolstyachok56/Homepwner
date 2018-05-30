@@ -105,8 +105,8 @@
 				0492148420BD71C900AD46DC /* ItemsViewController.swift */,
 				0492148620BD72C700AD46DC /* Item.swift */,
 				0492148820BD90C300AD46DC /* ItemStore.swift */,
-				044F419420BD6F4900E05EFC /* Main.storyboard */,
 				044F419720BD6F4A00E05EFC /* Assets.xcassets */,
+				044F419420BD6F4900E05EFC /* Main.storyboard */,
 				044F419920BD6F4A00E05EFC /* LaunchScreen.storyboard */,
 				044F419C20BD6F4A00E05EFC /* Info.plist */,
 			);
