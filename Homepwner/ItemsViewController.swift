@@ -21,11 +21,8 @@ class ItemsViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
     }
     
-<<<<<<< HEAD
     // MARK: - UITableViewDateSource methods
     
-=======
->>>>>>> 71f66e2e47014ff42e925ca4ec7b36172531ede5
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
@@ -41,7 +38,11 @@ class ItemsViewController: UITableViewController {
     //MARK: - Editing mode implementation
     
     @IBAction func addNewItem(_ sender: UIButton) {
-        
+        let newItem = itemStore.createItem()
+        if let index = itemStore.allItems.index(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
     }
     
     @IBAction func toggleEditingMode(_ sender: UIButton) {
