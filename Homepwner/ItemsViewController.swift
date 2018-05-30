@@ -21,8 +21,11 @@ class ItemsViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
     }
     
+<<<<<<< HEAD
     // MARK: - UITableViewDateSource methods
     
+=======
+>>>>>>> 71f66e2e47014ff42e925ca4ec7b36172531ede5
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
