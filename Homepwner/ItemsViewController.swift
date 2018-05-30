@@ -24,14 +24,19 @@ class ItemsViewController: UITableViewController {
     // MARK: - UITableViewDateSource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count
+        return itemStore.allItems.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        if indexPath.row < itemStore.allItems.count {
+            let item = itemStore.allItems[indexPath.row]
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        } else {
+            cell.textLabel?.text = "No more items!"
+            cell.detailTextLabel?.text = ""
+        }
         return cell
     }
     
@@ -58,6 +63,14 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row < itemStore.allItems.count {
+            return true
+        } else {
+            return false
+        }
     }
     
     //MARK: - Editing mode implementation
