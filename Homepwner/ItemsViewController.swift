@@ -73,6 +73,24 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row < itemStore.allItems.count {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // MARK: - UITableViewDateDelegate methods
+    
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if proposedDestinationIndexPath.row < itemStore.allItems.count {
+            return proposedDestinationIndexPath
+        } else {
+            return sourceIndexPath
+        }
+    }
+    
     //MARK: - Editing mode implementation
     
     @IBAction func addNewItem(_ sender: UIButton) {
