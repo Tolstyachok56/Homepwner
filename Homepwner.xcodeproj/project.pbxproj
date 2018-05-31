@@ -17,6 +17,7 @@
 		0492148520BD71C900AD46DC /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148420BD71C900AD46DC /* ItemsViewController.swift */; };
 		0492148720BD72C700AD46DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148620BD72C700AD46DC /* Item.swift */; };
 		0492148920BD90C300AD46DC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148820BD90C300AD46DC /* ItemStore.swift */; };
+		04E122BE20C004F3002DA894 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E122BD20C004F3002DA894 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0492148420BD71C900AD46DC /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		0492148620BD72C700AD46DC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0492148820BD90C300AD46DC /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		04E122BD20C004F3002DA894 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				044F419020BD6F4900E05EFC /* AppDelegate.swift */,
-				0492148420BD71C900AD46DC /* ItemsViewController.swift */,
-				0492148620BD72C700AD46DC /* Item.swift */,
-				0492148820BD90C300AD46DC /* ItemStore.swift */,
-				0416517D20BEE016009F66AC /* ItemCell.swift */,
+				04E122BF20C0052A002DA894 /* Model */,
+				04E122C020C0053A002DA894 /* View */,
+				04E122C120C00543002DA894 /* Controller */,
 				044F419720BD6F4A00E05EFC /* Assets.xcassets */,
 				044F419420BD6F4900E05EFC /* Main.storyboard */,
 				044F419920BD6F4A00E05EFC /* LaunchScreen.storyboard */,
@@ -132,6 +133,32 @@
 				044F41B220BD6F4A00E05EFC /* Info.plist */,
 			);
 			path = HomepwnerUITests;
+			sourceTree = "<group>";
+		};
+		04E122BF20C0052A002DA894 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0492148620BD72C700AD46DC /* Item.swift */,
+				0492148820BD90C300AD46DC /* ItemStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04E122C020C0053A002DA894 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0416517D20BEE016009F66AC /* ItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04E122C120C00543002DA894 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0492148420BD71C900AD46DC /* ItemsViewController.swift */,
+				04E122BD20C004F3002DA894 /* DetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +295,7 @@
 				0492148520BD71C900AD46DC /* ItemsViewController.swift in Sources */,
 				0492148720BD72C700AD46DC /* Item.swift in Sources */,
 				0492148920BD90C300AD46DC /* ItemStore.swift in Sources */,
+				04E122BE20C004F3002DA894 /* DetailViewController.swift in Sources */,
 				044F419120BD6F4900E05EFC /* AppDelegate.swift in Sources */,
 				0416517E20BEE016009F66AC /* ItemCell.swift in Sources */,
 			);
