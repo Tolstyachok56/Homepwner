@@ -13,11 +13,15 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     var imageStore: ImageStore!
     
+    //MARK: - Initializers
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         navigationItem.leftBarButtonItem = editButtonItem
     }
+    
+    //MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,32 @@ class ItemsViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
+        let newItem = itemStore.createItem()
+        if let index = itemStore.allItems.index(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showItem"? :
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+                detailViewController.imageStore = imageStore
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
     }
     
     // MARK: - UITableViewDateSource methods
@@ -74,32 +104,6 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-    }
-    
-    //MARK: - Editing mode implementation
-    
-    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
-        let newItem = itemStore.createItem()
-        if let index = itemStore.allItems.index(of: newItem) {
-            let indexPath = IndexPath(row: index, section: 0)
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
-    
-    //MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "showItem"? :
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let item = itemStore.allItems[row]
-                let detailViewController = segue.destination as! DetailViewController
-                detailViewController.item = item
-                detailViewController.imageStore = imageStore
-            }
-        default:
-            preconditionFailure("Unexpected segue identifier.")
-        }
     }
     
 }

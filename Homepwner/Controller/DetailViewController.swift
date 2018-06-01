@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
@@ -38,6 +38,8 @@ class DetailViewController: UIViewController {
         formatter.timeStyle = .none
         return formatter
     }()
+    
+    //MARK: - View life cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,23 +86,15 @@ class DetailViewController: UIViewController {
         
         present(imagePicker, animated: true, completion: nil)
     }
-    
-}
 
-//MARK: - UITextFieldDelegate
+//MARK: - UITextFieldDelegate mathods
 
-extension DetailViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-}
 
-//MARK: - UIImagePickerControllerDelegate
-
-extension DetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+//MARK: - UIImagePickerControllerDelegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
