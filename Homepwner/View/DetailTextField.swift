@@ -11,14 +11,12 @@ import UIKit
 class DetailTextField: UITextField {
     
     override func becomeFirstResponder() -> Bool {
-        super.becomeFirstResponder()
-        self.borderStyle = .bezel
-        return true
+        borderStyle = .bezel
+        return super.becomeFirstResponder()
     }
     
     override func resignFirstResponder() -> Bool {
-        super.resignFirstResponder()
-        self.borderStyle = .roundedRect
-        return true
+        borderStyle = .roundedRect
+        return super.resignFirstResponder()
     }
 }
