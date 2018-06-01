@@ -94,6 +94,8 @@ extension DetailViewController: UITextFieldDelegate {
     
 }
 
+//MARK: - UIImagePickerControllerDelegate
+
 extension DetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
