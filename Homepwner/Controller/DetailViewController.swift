@@ -76,6 +76,11 @@ class DetailViewController: UIViewController {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
+            
+            let crosshair = UIImageView(frame: CGRect(x: imagePicker.cameraOverlayView!.frame.midX - 16, y: imagePicker.cameraOverlayView!.frame.midY - 16, width: 32, height: 32))
+            crosshair.image = UIImage(named: "focus")
+            
+            imagePicker.cameraOverlayView = crosshair
         } else {
             imagePicker.sourceType = .photoLibrary
         }
