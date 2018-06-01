@@ -85,6 +85,11 @@ class DetailViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func deletePicture(_ sender: UIBarButtonItem) {
+        imageView.image = nil
+        imageStore.deleteImage(forKey: item.itemKey)
+        
+    }
 }
 
 //MARK: - UITextFieldDelegate
