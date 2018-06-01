@@ -14,6 +14,7 @@
 		044F419B20BD6F4A00E05EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044F419920BD6F4A00E05EFC /* LaunchScreen.storyboard */; };
 		044F41A620BD6F4A00E05EFC /* HomepwnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F41A520BD6F4A00E05EFC /* HomepwnerTests.swift */; };
 		044F41B120BD6F4A00E05EFC /* HomepwnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F41B020BD6F4A00E05EFC /* HomepwnerUITests.swift */; };
+		0453B5F820C13ABE00FCAB3E /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453B5F720C13ABE00FCAB3E /* DateViewController.swift */; };
 		0492148520BD71C900AD46DC /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148420BD71C900AD46DC /* ItemsViewController.swift */; };
 		0492148720BD72C700AD46DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148620BD72C700AD46DC /* Item.swift */; };
 		0492148920BD90C300AD46DC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492148820BD90C300AD46DC /* ItemStore.swift */; };
@@ -51,6 +52,7 @@
 		044F41AC20BD6F4A00E05EFC /* HomepwnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		044F41B020BD6F4A00E05EFC /* HomepwnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepwnerUITests.swift; sourceTree = "<group>"; };
 		044F41B220BD6F4A00E05EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0453B5F720C13ABE00FCAB3E /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		0492148420BD71C900AD46DC /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		0492148620BD72C700AD46DC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0492148820BD90C300AD46DC /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				0492148420BD71C900AD46DC /* ItemsViewController.swift */,
 				04E122BD20C004F3002DA894 /* DetailViewController.swift */,
+				0453B5F720C13ABE00FCAB3E /* DateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				0492148520BD71C900AD46DC /* ItemsViewController.swift in Sources */,
 				0492148720BD72C700AD46DC /* Item.swift in Sources */,
+				0453B5F820C13ABE00FCAB3E /* DateViewController.swift in Sources */,
 				0492148920BD90C300AD46DC /* ItemStore.swift in Sources */,
 				04E122BE20C004F3002DA894 /* DetailViewController.swift in Sources */,
 				044F419120BD6F4900E05EFC /* AppDelegate.swift in Sources */,

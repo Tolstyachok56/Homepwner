@@ -153,11 +153,18 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceI-x3-2Wn">
-                                        <rect key="frame" x="0.0" y="114" width="343" height="473"/>
+                                        <rect key="frame" x="0.0" y="114" width="343" height="435"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2q-b9-JZU">
+                                        <rect key="frame" x="0.0" y="557" width="343" height="30"/>
+                                        <state key="normal" title="Change Date"/>
+                                        <connections>
+                                            <segue destination="Tfq-rK-qVa" kind="show" identifier="changeDate" id="hAK-Y2-Mah"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bMN-5x-8Ze" firstAttribute="leading" secondItem="wC0-7C-mw8" secondAttribute="leading" id="JNO-n9-vC9"/>
@@ -193,6 +200,37 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1172" y="125.4872563718141"/>
+        </scene>
+        <!--Date View Controller-->
+        <scene sceneID="Yvc-tz-R0b">
+            <objects>
+                <viewController id="Tfq-rK-qVa" customClass="DateViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euq-4u-iTi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="X3H-Ab-exb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="549534303.51539898">
+                                    <!--2018-06-01 08:25:03 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X3H-Ab-exb" firstAttribute="leading" secondItem="tQs-GX-KkF" secondAttribute="leading" id="1ao-KH-qe0"/>
+                            <constraint firstItem="X3H-Ab-exb" firstAttribute="trailing" secondItem="tQs-GX-KkF" secondAttribute="trailing" id="Usx-1i-75Z"/>
+                            <constraint firstItem="X3H-Ab-exb" firstAttribute="top" secondItem="tQs-GX-KkF" secondAttribute="top" id="gGe-CJ-gev"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tQs-GX-KkF"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="X3H-Ab-exb" id="K3V-U9-Phk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uh-DH-1nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JKB-lF-MiD">
