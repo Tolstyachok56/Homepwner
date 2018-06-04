@@ -114,6 +114,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical" distribution="fillProportionally"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z2A-m8-J14">
                                                 <rect key="frame" x="0.0" y="38" width="343" height="30"/>
@@ -134,6 +135,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical" distribution="fillProportionally"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iQ3-M9-BDQ">
                                                 <rect key="frame" x="0.0" y="76" width="343" height="30"/>
@@ -154,6 +156,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical" distribution="fillProportionally"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceI-x3-2Wn">
                                                 <rect key="frame" x="0.0" y="114" width="343" height="20.5"/>
